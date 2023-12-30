@@ -21,4 +21,5 @@ In service folder
 1 - set the meta.tf with vpc and ecr name
 
 In service folder:
-1 - Review the job_definition
+1 - Review the job_definition version
+2 - Change your Dockerfile if needed (add pseudopotentials, new inputs)
