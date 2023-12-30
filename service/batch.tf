@@ -2,7 +2,7 @@ resource "aws_batch_compute_environment" "batch" {
   compute_environment_name = "my-project-compute-env"
 
   compute_resources {
-    max_vcpus = 4
+    max_vcpus = 6
     security_group_ids = [
       aws_security_group.batch.id,
     ]
@@ -36,7 +36,7 @@ resource "aws_batch_job_definition" "batch" {
     command = [
       "mpirun",
       "-np",
-      "2",
+      "6",
       "/opt/qe-6.8/bin/pw.x",
       "-in",
       "/workdir/input.in",

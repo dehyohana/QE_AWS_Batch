@@ -44,6 +44,7 @@ RUN wget https://www.quantum-espresso.org/rdm-download/488/v6-8/cf1cbd7b9f3eec32
 WORKDIR /workdir
 
 # Copy the Quantum ESPRESSO input file into the container
+# Change input and pseudopotential as your need
 COPY input.in .
 COPY Si.pbe-rrkj.UPF /opt/qe-6.8/pseudo/
 

@@ -33,7 +33,7 @@ EOF
     policy = jsonencode({
       Version = "2012-10-17",
       Statement = [{
-        Action   = [
+        Action = [
           "ecr:GetAuthorizationToken",
           "ecr:BatchCheckLayerAvailability",
           "ecr:GetDownloadUrlForLayer",
@@ -71,7 +71,7 @@ resource "aws_iam_role" "aws_ecs_task_execution_role" {
 }
 EOF
 
-  # Adding additional inline policies for ECS, Logs, and Auto Scaling
+  # Adding additional inline policies for ECR, Logs, and Auto Scaling
   inline_policy {
     name = "ECSPolicy"
     policy = jsonencode({
@@ -120,7 +120,7 @@ EOF
       Version = "2012-10-17",
       Statement = [
         {
-          Action   = [
+          Action = [
             "ecr:GetAuthorizationToken",
             "ecr:BatchCheckLayerAvailability",
             "ecr:GetDownloadUrlForLayer",

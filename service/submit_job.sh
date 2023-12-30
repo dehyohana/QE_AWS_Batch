@@ -3,7 +3,7 @@
 # AWS Batch job name
 JOB_NAME="qe-fargate-job-v3"
 
-# AWS Batch job definition and revision
+# AWS Batch job definition and revision (change to a correct job revision)
 JOB_DEFINITION="my-project-job-definition"
 JOB_REVISION="3"
 
@@ -14,12 +14,12 @@ JOB_QUEUE="my-project-job-queue-example"
 SECRET_NAME="terraform_user"
 
 # Fetch AWS credentials from Secrets Manager
-AWS_CREDS=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:us-east-1:244883884162:secret:terraform_user-RJI5cn --query SecretString --output text)
+AWS_CREDS=$(aws secretsmanager get-secret-value --secret-id <your_secret_arn> --query SecretString --output text)
 
 # Additional configuration for running pw.x inside the container
 # Container overrides for running pw.x with mpirun
 CONTAINER_OVERRIDES='{
-  "command": ["mpirun", "-np", "2", "/opt/qe-6.8/bin/pw.x", "-in", "/workdir/input.in", "> /workdir/output.out"],
+  "command": ["mpirun", "-np", "6", "/opt/qe-6.8/bin/pw.x", "-in", "/workdir/input.in", "> /workdir/output.out"],
   "environment": [
     {"name": "AWS_ACCESS_KEY_ID", "value": "'$(echo $AWS_CREDS | jq -r .AWS_ACCESS_KEY_ID)'"},
     {"name": "AWS_SECRET_ACCESS_KEY", "value": "'$(echo $AWS_CREDS | jq -r .AWS_SECRET_ACCESS_KEY)'"},
