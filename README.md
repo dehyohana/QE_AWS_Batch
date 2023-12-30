@@ -17,9 +17,7 @@ In github configurations you will need a IGW or Nat Gateway
 - 2 - In Settings > Secrets and Variables > Actions, add Repository Secrets: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 - 3 - Run the pipeline in actions 
 
-In service folder
+Go to service folder:
 - 1 - set the meta.tf with vpc and ecr name
-
-In service folder:
-- 1 - Review the job_definition version
-- 2 - Change your Dockerfile if needed (add pseudopotentials, new inputs)
+- 2 - Review the job_definition version
+- 3 - Change your Dockerfile if needed (add pseudopotentials, new inputs)
