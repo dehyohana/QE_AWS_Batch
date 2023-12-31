@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_REGION: ${{ env.AWS_REGION }}
+      AWS_REGION: ${{ AWS_REGION }}
 
     steps:
       - name: Checkout code
