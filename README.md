@@ -21,13 +21,12 @@ Deploy the basic infra:
 - 8 - Run: Terraform Apply -var-file=vars.tfvars.
 
 Configure Github Actions secrets and environment variables:
-- 1 - In your repository, go to Settings, add environments AWS_ACCOUNT_ID, ECR_REPOSITORY_NAME and AWS_REGION;
-- 2 - In Settings > Secrets and Variables > Actions, add Repository Secrets: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY;
-- 3 - Change your Dockerfile if needed (add pseudopotentials, new inputs, quantity of processors in -np)
-- 4 - Update the entrypoint.sh with your ARN from secrets created in Secrets Manager in <ARN_Secrets_Manager>;
-- 5- Update the entrypoint.sh with your bucket name in <your_Bucket_name>
-- 6 - Run the pipeline in actions;
-- 7 - Save the image URI, it will be used later.
+- 1 - In Settings > Secrets and Variables > Actions, add Repository Secrets: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_REGION, ECR_REPOSITORY_NAME and AWS_ACCOUNT_ID ;
+- 2 - Change your Dockerfile if needed (add pseudopotentials, new inputs, quantity of processors in -np)
+- 3 - Update the entrypoint.sh with your ARN from secrets created in Secrets Manager in <ARN_Secrets_Manager>;
+- 4 - Update the entrypoint.sh with your bucket name in <your_Bucket_name>
+- 5 - Run the pipeline in actions;
+- 6 - Save the image URI, it will be used later.
 
 Deploy AWS Batch and job definition:
 - 1 - Go to service folder;
