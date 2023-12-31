@@ -1,9 +1,12 @@
 name: Push to ECR
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      target_branch:
+        description: 'Enter the target branch'
+        required: true
+        default: 'main' # Default branch
 
 jobs:
   push_to_ecr:
