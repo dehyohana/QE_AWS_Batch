@@ -11,11 +11,10 @@ on:
 jobs:
   push_to_ecr:
     runs-on: ubuntu-latest
-
     env:
-        AWS_REGION: ${{ env.AWS_REGION }}
-        AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }}
-        ECR_REPOSITORY_NAME: ${{ env.ECR_REPOSITORY_NAME }}
+      AWS_REGION: ${{ env.AWS_REGION }}
+      AWS_ACCOUNT_ID: ${{ env.AWS_ACCOUNT_ID }}
+      ECR_REPOSITORY_NAME: ${{ env.ECR_REPOSITORY_NAME }}
 
     steps:
       - name: Checkout code
