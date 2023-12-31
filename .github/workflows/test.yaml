@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_ACCESS_KEY_ID : ${{ secrets.AWS_ACCESS_KEY_ID  }}
+      AWS_REGION: ${{ var.AWS_REGION }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Print repository environment variable
-        run: echo "Value of AWS_ACCESS_KEY_ID  is $AWS_ACCESS_KEY_ID "
+        run: echo "Value of AWS_REGION is $AWS_REGION"
 
       # Add your build and deploy steps here
