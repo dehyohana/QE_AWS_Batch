@@ -11,12 +11,6 @@ on:
 jobs:
   push_to_ecr:
     runs-on: ubuntu-latest
-
-    env:
-      AWS_REGION: your-aws-region
-      AWS_ACCOUNT_ID: your-account-id
-      ECR_REPOSITORY_NAME: your-ecr-repository-name
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
