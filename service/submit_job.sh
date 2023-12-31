@@ -19,7 +19,7 @@ AWS_CREDS=$(aws secretsmanager get-secret-value --secret-id <your_secret_arn> --
 # Additional configuration for running pw.x inside the container
 # Container overrides for running pw.x with mpirun
 CONTAINER_OVERRIDES='{
-  "command": ["mpirun", "-np", "6", "/opt/qe-6.8/bin/pw.x", "-in", "/workdir/input.in", "> /workdir/output.out"],
+  "command": ["mpirun", "-np", "4", "/opt/qe-6.8/bin/pw.x", "-in", "/workdir/input.in", "> /workdir/output.out"],
   "environment": [
     {"name": "AWS_ACCESS_KEY_ID", "value": "'$(echo $AWS_CREDS | jq -r .AWS_ACCESS_KEY_ID)'"},
     {"name": "AWS_SECRET_ACCESS_KEY", "value": "'$(echo $AWS_CREDS | jq -r .AWS_SECRET_ACCESS_KEY)'"},

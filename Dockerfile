@@ -56,12 +56,6 @@ ENV OMP_NUM_THREADS=1
 ENV MKL_NUM_THREADS=1
 ENV MPICH_MAX_THREAD_SAFETY=multiple
 
-# # Set a default user
-# USER 1001
-
-# Entry point for the container
-# CMD ["mpirun", "-np", "2", "/opt/qe-6.8/bin/pw.x", "-in", "/workdir/input.in", ">/workdir/output.out"]
-
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
