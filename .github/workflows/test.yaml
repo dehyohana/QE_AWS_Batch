@@ -17,6 +17,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Print repository environment variable
-        run: echo "Value of ECR_REPOSITORY_NAME is ${{ env.ECR_REPOSITORY_NAME }}"
+        run: echo "Value of ECR_REPOSITORY_NAME is ${{ ECR_REPOSITORY_NAME }}"
 
       # Add your build and deploy steps here
