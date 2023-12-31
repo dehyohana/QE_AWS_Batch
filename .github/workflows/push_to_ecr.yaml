@@ -5,7 +5,7 @@ on:
     inputs:
       target_branch:
         description: 'Enter the target branch'
-        required: true
+        required: false
         default: 'main' # Default branch
 
 jobs:
