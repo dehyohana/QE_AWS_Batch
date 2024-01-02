@@ -2,7 +2,7 @@ This project enables you to execute electronic structure calculations utilizing 
 
 The architecture:
 
-![Architeture between ECR-ECS](/figures/batch_ecr.drawio.png)
+![Architeture between ECR-ECS](/figures/batch_ecr.png)
 
 Pre-configuration:
 - 1 - [Install Terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
