@@ -9,6 +9,7 @@ Pre-configuration:
 - 2 - Create a user and generate a pair key, that user need permission to push image in ECR and run Quantum Espresso commands in ECS;
 - 3 - Create a secret in AWS Secrets Manager with AWS_REGION, AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY keys, pass your credentials as value;
 - 4 - Save the secret ARN.
+- 5 - You must have a network layer (VPC and Subnet)
 
 Deploy the basic infra:
 - 1 - Fork the project;
@@ -35,5 +36,11 @@ Deploy AWS Batch and job definition:
 - 4 - Configure your vars.tfvars (e.g: ecr_image_uri="<your_account_id>.dkr.ecr.us-east-1.amazonaws.com/quantum_espresso:latest");
 - 5 - Run: Terraform Apply -var-file=vars.tfvars.
 - 6 - In submit_job.sh set your ARN from secrets manager in <ARN_Secrets_Manager>, review the job_definition version and update another desired configuration;
-- 7 - In your terminal run: chmod +x submit_job.sh
-- 8 - In your terminal run: ./submit_job.sh
+- 7 - In your terminal run: 
+```bash
+chmod +x submit_job.sh
+```
+- 8 - In your terminal run: 
+```bash
+./submit_job.sh
+```
