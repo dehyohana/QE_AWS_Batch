@@ -35,7 +35,7 @@ WORKDIR /opt
 RUN wget https://gitlab.com/QEF/q-e/-/archive/qe-6.8/q-e-qe-6.8.tar.gz && \
     tar -xzvf q-e-qe-6.8.tar.gz && \
     rm q-e-qe-6.8.tar.gz && \
-    cd qe-6.8 && \
+    cd q-e-qe-6.8 && \
     ./configure && \
     make && \
     make pw
