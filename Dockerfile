@@ -27,7 +27,7 @@ RUN apt-get update && \
    
 # Set environment variables
 ENV QE_HOME /opt/qe
-ENV AWS_S3_BUCKET deborah-qe-test-bucket 
+ENV AWS_S3_BUCKET diamond-deborah
 ENV AWS_REGION us-east-1         
 
 # Download and install Quantum ESPRESSO
@@ -45,8 +45,12 @@ WORKDIR /workdir
 
 # Copy the Quantum ESPRESSO input file into the container
 # Change input and pseudopotential as your need
-COPY input.in .
-COPY Si.pbe-rrkj.UPF /opt/qe-6.8/pseudo/
+COPY diamond.in .
+COPY Nb.pbe-nsp-van.UPF /opt/qe-6.8/pseudo/
+COPY O.pbe-rrkjus.UPF /opt/qe-6.8/pseudo/
+COPY Ti.pbe-sp-van_ak.UPF /opt/qe-6.8/pseudo/
+COPY Y.pbe-nsp-van.UPF /opt/qe-6.8/pseudo/
+
 
 # Set the PATH variable to include the directory where pw.x is installed
 ENV PATH="/opt/qe-6.8/bin:${PATH}"
