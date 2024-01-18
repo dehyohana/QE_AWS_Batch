@@ -32,9 +32,9 @@ ENV AWS_REGION us-east-1
 
 # Download and install Quantum ESPRESSO
 WORKDIR /opt
-RUN wget https://www.quantum-espresso.org/rdm-download/488/v6-8/cf1cbd7b9f3eec3283f24fe827fee991/qe-6.8-ReleasePack.tgz && \
-    tar -xzvf qe-6.8-ReleasePack.tgz && \
-    rm qe-6.8-ReleasePack.tgz && \
+RUN wget https://gitlab.com/QEF/q-e/-/archive/qe-6.8/q-e-qe-6.8.tar.gz && \
+    tar -xzvf q-e-qe-6.8.tar.gz && \
+    rm q-e-qe-6.8.tar.gz && \
     cd qe-6.8 && \
     ./configure && \
     make && \
